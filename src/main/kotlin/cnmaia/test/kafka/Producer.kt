@@ -17,12 +17,11 @@ class Producer(private val kafkaTemplate: KafkaTemplate<Long, String>) {
                 println("Funfou")
             }
 
-            override fun onFailure(ex: Throwable?) {
+            override fun onFailure(ex: Throwable) {
                 println("Não funfou")
-                ex?.printStackTrace()
+                ex.printStackTrace()
             }
 
         })
-
     }
 }

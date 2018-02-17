@@ -17,7 +17,7 @@ import org.springframework.kafka.core.*
 open class KafkaConfiguration {
 
     @Bean
-    open fun kafkaListener(): ConcurrentKafkaListenerContainerFactory<Long, String> {
+    open fun kafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<Long, String> {
         val factory = ConcurrentKafkaListenerContainerFactory<Long, String>()
         factory.consumerFactory = consumerFactory()
         factory.setConcurrency(3)
