@@ -8,9 +8,9 @@ import java.util.concurrent.CountDownLatch
 class Consumer {
     private val latch : CountDownLatch = CountDownLatch(1)
 
-    @KafkaListener(id = "first-listener", topics = ["fist"], groupId = "first-group")
-    fun list(foo: String) {
-        println(foo)
+    @KafkaListener(id = "first-listener", topics = ["first"], groupId = "first-group")
+    fun list(message: String) {
+        println("Received Message: "+ message)
         this.latch.countDown()
     }
 }
