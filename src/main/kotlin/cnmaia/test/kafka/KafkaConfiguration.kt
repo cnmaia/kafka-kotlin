@@ -43,8 +43,8 @@ open class KafkaConfiguration {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
         // If we dont set this we have to commit the offset ourselves
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000")
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer::class)
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class)
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer::class.java)
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java)
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true)
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "20000")
 
@@ -63,8 +63,8 @@ open class KafkaConfiguration {
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
         props.put(ProducerConfig.RETRIES_CONFIG, "0")
         props.put(ProducerConfig.ACKS_CONFIG, "1")
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer::class)
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer::class)
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer::class.java)
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java)
 
         return props
     }
