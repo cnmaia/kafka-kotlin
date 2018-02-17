@@ -52,11 +52,6 @@ open class KafkaConfiguration {
     }
 
     @Bean
-    open fun listener() : Listener {
-        return Listener()
-    }
-
-    @Bean
     open fun producerFactory(): ProducerFactory<Long, String> {
         return DefaultKafkaProducerFactory(producerConfigs())
     }
