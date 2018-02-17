@@ -37,7 +37,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.kafka:spring-kafka:2.1.1.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter:2.0.0.BUILD-SNAPSHOT'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
 }
 
 compileKotlin {
